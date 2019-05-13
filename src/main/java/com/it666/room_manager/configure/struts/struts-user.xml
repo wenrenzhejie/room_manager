@@ -6,7 +6,7 @@
     <package name="user" extends="common" namespace="/">
         <action name="user_*" class="com.it666.room_manager.user.action.UserAction" method="{1}">
             <result name="regist_success"></result>
-            <result name="regist_failed"></result>
+            <result name="regist_failed">/regist.jsp</result>
         </action>
     </package>
 </struts>
