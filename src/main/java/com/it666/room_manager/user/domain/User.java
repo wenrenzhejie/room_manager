@@ -55,7 +55,7 @@ public class User {
         return activecode;
     }
 
-    public void setActiveCode(String activecode) {
+    public void setActivecode(String activecode) {
         this.activecode = activecode;
     }
 

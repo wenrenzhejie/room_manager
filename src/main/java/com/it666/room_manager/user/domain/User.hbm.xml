@@ -8,7 +8,6 @@
         <id name="uid" column="uid">
             <generator class="uuid"></generator>
         </id>
-
         <property name="username"></property>
         <property name="password"></property>
         <property name="email"></property>

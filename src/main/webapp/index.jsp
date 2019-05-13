@@ -39,13 +39,22 @@
 		<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
 		<li><a href="#gallery" class="page-scroll">Gallery</a></li>
 		<li><a href="#contactus" class="page-scroll">Contact Us</a></li>
+          <s:if test="%{#attr.userName != null}">
+              <li><a href="#contactus" class="page-scroll" id="user">欢迎<s:property value="#attr.userName"></s:property></a></li>
+          </s:if>
+
       </ul>
-    
       <ul class="nav navbar-nav navbar-right">
       <ul class="nav pull-right">
           <li class="dropdown" id="menuLogin">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">登录</a>
-            <div class="dropdown-menu">
+              <s:if test="%{#attr.userName != null}">
+                  <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/user_quit" id="navLogin">退出</a>
+              </s:if>
+              <s:else>
+                  <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/login.jsp" id="navLogin">登录</a>
+              </s:else>
+
+           <%-- <div class="dropdown-menu">
               <form action="#" method="post">
 			  <div class="form-group">
                 <input type="text" name="username" placeholder="Username" required="">
@@ -55,7 +64,7 @@
 				</div>
                 <button type="submit" id="btnLogin" class="btn">Login</button>
               </form>
-            </div>
+            </div>--%>
           </li>
         </ul>
         

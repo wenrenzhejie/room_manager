@@ -21,6 +21,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         return user;
     }
     private UserService userService;
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
     public String regist(){
         String verifyCode = (String) ActionContext.getContext().getSession().get("verifyCode");
         String username = user.getUsername();
@@ -46,7 +51,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
             this.addFieldError("email", "email格式不正确");
         }
 
-        if(!user.getCode().equalsIgnoreCase(verifyCode)) {
+        if(!code.equalsIgnoreCase(verifyCode)) {
             this.addFieldError("code", "验证码输入错误");
         }
 
@@ -58,7 +63,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         uuid = new String(uuid.replace("-",""));
         user.setUid(uuid);
         String activeCode = UUID.randomUUID().toString();
-        user.setActiveCode(activeCode);
+       user.setActivecode(activeCode);
         try {
             userService.regist(user);
             //走到这里，已保存成功
@@ -86,15 +91,50 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
             }
         } catch (UserException e) {
             String message = e.getMessage();
-            if (message.contains("用户名")){
-                this.addFieldError("username",message);
-            }else {
-                this.addFieldError("email",email);
-            }
+            this.addFieldError("regist_failed1",message);
         }
         if(this.getFieldErrors().size()>0) {
             return "regist_failed";
         }
+        if(email.contains("163")){
+            ActionContext.getContext().getValueStack().set("web","https://mail.163.com/");
+        }else{
+            ActionContext.getContext().getValueStack().set("web","https://mail.qq.com/cgi-bin/loginpage");
+        }
         return "regist_success";
+    }
+
+    public String active(){
+        try {
+            System.out.println("active");
+            userService.active(user);
+            System.out.println(user.getActivecode());
+        } catch (UserException e) {
+            String message = e.getMessage();
+            this.addFieldError("active_msg",message);
+            return "active_failed";
+        }
+        return "active_success";
+    }
+
+    public String login(){
+        try {
+            System.out.println("钱");
+            System.out.println(user.getUsername());
+            System.out.println(user.getPassword());
+            userService.login(user);
+            System.out.println("h后");
+        } catch (UserException e) {
+            this.addFieldError("login_error",e.getMessage());
+            return "login_failed";
+        }
+        ActionContext.getContext().getSession().put("userName",user.getUsername());
+        System.out.println("user");
+        return "login_success";
+    }
+
+    public String quit(){
+        ActionContext.getContext().getSession().remove("userName");
+        return "quit_success";
     }
 }

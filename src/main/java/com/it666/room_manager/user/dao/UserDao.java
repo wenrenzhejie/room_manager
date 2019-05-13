@@ -6,4 +6,6 @@ public interface UserDao {
     public User findByName(String username);
     public User findByEmail(String email);
     public void regist(User user);
+    public User findByActiveCode(String activecode);
+    public void active(User u1);
 }

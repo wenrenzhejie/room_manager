@@ -34,4 +34,20 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     public void regist(User user) {
         this.getHibernateTemplate().save(user);
     }
+
+    @Override
+    public User findByActiveCode(String activecode) {
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(User.class);
+        detachedCriteria.add(Restrictions.eq("activecode",activecode));
+        List<User> list = (List<User>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+        if(list.size() != 0){
+            return list.get(0);
+        }
+        return null;
+    }
+
+    @Override
+    public void active(User u1) {
+        this.getHibernateTemplate().update(u1);
+    }
 }
