@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="validatecode" extends="common" namespace="/">
+        <result-types>
+            <result-type name="code" class="com.it666.room_manager.validatecode.result.CodeResult"></result-type>
+        </result-types>
+        <action name="verifycode" class="com.it666.room_manager.validatecode.action.VerifyCodeAction" method="getCode">
+            <result name="success" type="code">
+                <param name="width">100</param>
+                <param name="height">50</param>
+                <param name="codeCount">4</param>
+                <param name="lineCount">30</param>
+            </result>
+        </action>
+    </package>
+</struts>
