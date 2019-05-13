@@ -9,7 +9,8 @@ public class User {
     private String password;
     private String email;
     private String code;
-
+    private String activecode;
+    private boolean state;
     public String getUid() {
         return uid;
     }
@@ -50,14 +51,19 @@ public class User {
         this.code = code;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "uid='" + uid + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", code='" + code + '\'' +
-                '}';
+    public String getActivecode() {
+        return activecode;
+    }
+
+    public void setActiveCode(String activecode) {
+        this.activecode = activecode;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
     }
 }

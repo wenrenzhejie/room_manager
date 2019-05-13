@@ -4,4 +4,15 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
+    <class name="com.it666.room_manager.user.domain.User" table="user">
+        <id name="uid" column="uid">
+            <generator class="uuid"></generator>
+        </id>
+
+        <property name="username"></property>
+        <property name="password"></property>
+        <property name="email"></property>
+        <property name="activecode"></property>
+        <property name="state"></property>
+    </class>
 </hibernate-mapping>

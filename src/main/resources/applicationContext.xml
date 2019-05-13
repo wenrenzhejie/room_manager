@@ -50,5 +50,5 @@
     <aop:config>
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.it666.room_manager.*.service..*.*(..))"></aop:advisor>
     </aop:config>
-
+    <import resource="classpath:com/it666/room_manager/configure/spring/applicationContext-user.xml"></import>
 </beans>

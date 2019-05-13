@@ -10,6 +10,7 @@
 </head>
  
 <body>
+
 	<div class="main">
 				 <!-----start-main---->
 				 <div class="inset">
@@ -20,34 +21,16 @@
 					</div>
 				 </div>	
 				 <h2>注册账号</h2>
-			<%--	 <form action="${pageContext.servletContext.contextPath}/user_regist">
-							<div class="lable-2">
-		                     	<input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" &lt;%&ndash;id="active"&ndash;%&gt; name="username">
-		                    </div>
-		                    <div class="clear"> </div>
-		                    <div class="lable-2">
-		                     <input type="password" class="text" value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}" name="password">
-							<input type="text" class="text" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}" name="email">
-							<input type="text" class="text" value="ValidateCode " onfocus="this.value = '';" id="verifycode" name="code"><a href="javascript:_change()"><img src="${pageContext.servletContext.contextPath}/verifycode" name="code" class="img" id="img"></a>
-							</div>
-							<div class="clear"> </div>
-							 <h3>请阅读以下条款并同意 <span><a href="#">协议</a> </span></h3>
-								 <div class="submit">
-									<input type="submit" value="注册" >
-								</div>
-									<div class="clear"> </div>
-							 </form>--%>
 		<s:form namespace="/" action="user_regist">
+            <s:fielderror style="color:red"></s:fielderror>
 							<div class="lable-2">
-
 								<s:textfield class="text" value="%{username}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" name="username"></s:textfield>
 		                    </div>
 		                    <div class="clear"> </div>
 		                    <div class="lable-2">
 								<s:textfield class="text" value="%{password}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}" name="password"></s:textfield>
 								<s:textfield class="text" value="%{email}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}" name="email"></s:textfield>
-								<s:textfield class="text" value="%{code}" onfocus="this.value = '';" id="verifycode" name="code"><a href="javascript:_change()"><img src="${pageContext.servletContext.contextPath}/verifycode" name="code" class="img" id="img"></s:textfield>
-							</div>
+                                <s:textfield class="text" value="%{code}" onfocus="this.value = '';" id="verifycode" name="code"></s:textfield><a href="javascript:_change()"><img src="${pageContext.servletContext.contextPath}/verifycode" name="code" class="img" id="img"/></a></div>
 							<div class="clear"> </div>
 							 <h3>请阅读以下条款并同意 <span><a href="#">协议</a> </span></h3>
 								 <div class="submit">
