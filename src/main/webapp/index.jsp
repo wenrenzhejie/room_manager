@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
        <li><a href="#">首页</a></li>
-        <li><a href="#aboutus" class="page-scroll">About Us</a></li>
+        <li><a href="#aboutus" class="page-scroll">关于我们</a></li>
 		<li><a href="#team" class="page-scroll">Team</a></li>
         <li><a href="#services" class="page-scroll">Services</a></li>
 		<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
@@ -54,20 +54,9 @@
                   <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/login.jsp" id="navLogin">登录</a>
               </s:else>
 
-           <%-- <div class="dropdown-menu">
-              <form action="#" method="post">
-			  <div class="form-group">
-                <input type="text" name="username" placeholder="Username" required="">
-				</div>
-				<div class="form-group">
-                <input type="password" name="password" placeholder="Password" required=""><br>
-				</div>
-                <button type="submit" id="btnLogin" class="btn">Login</button>
-              </form>
-            </div>--%>
           </li>
         </ul>
-        
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -115,40 +104,19 @@
             </div>
         </div>
     
-<!-- /header & Banner -->
-
-<!-- popup for sign up form -->
-	<%--<div class="modal video-modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div id="small-dialog2" class="mfp-hide book-form">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h3>Sign Up</h3>
-					<form action="#" method="post">
-						<input type="text" name="Name" placeholder="Your Name" required="" />
-						<input type="email" name="Email" class="email" placeholder="Email" required="" />
-						<input type="password" name="Password" id="password1" class="password" placeholder="Password" required="" />
-						<input type="password" name="Password" id="password2" class="password" placeholder="Confirm Password" required="" />
-						<input type="submit" value="Sign Up">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>--%>
-	<!-- //popup for sign up form -->
 
 <!-- About Us -->
 <div class="aboutus" id="aboutus">
 <div class="w3l_flex">
 <div class="container">
 <div class="col-md-4 w3l_flex1">
-<h3> We Work together to deliver value for your travel.</h3>
+<h3> 我们共同努力保障您的每一次住宿</h3>
 </div>
 <div class="col-md-6 w3l_flex2">
-<p>What you’ve done becomes the judge of what you’re going to do — especially in other people’s minds.  When you’re traveling, you are what you are right there and then.</p>
+<p>你所做的将成为你将要做的事情的评判标准——尤其是在别人的心目中。当你住宿的时候，你就是你现在所在的地方。</p>
 </div>
 <div class="col-md-2 w3l_flex3">
-<a href="#contactus" class="page-scroll">Get In Touch</a>
+<a href="#contactus" class="page-scroll">联系我们</a>
 </div>
 <div class="clearfix"></div>
 </div>
@@ -159,14 +127,14 @@
 <div class="col-md-5 w3l_aboutdown5">
 <h6>Welcome</h6>
 <h3>About</h3>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+<p>Sunshine hotel management group co., ltd. was established in 2002, is a hotel tourism as the core business of the professional company, can provide all kinds of meetings, business activities, study abroad, tourism, training, recuperation, vacation and other comprehensive quality services.</p>
  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read More</button>
   <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
 		<div class="modal-dialog" role="document">
              <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ROVE</h4>
+          <h4 class="modal-title">SUNSHINE</h4>
         </div>
         <div class="modal-body">
 		<img src="images/about.jpg"  class="img-responsive" alt="tfg">
@@ -649,7 +617,7 @@
  </div>--->
 <div class="footer">
 <div class="container">
- <p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+ <%--<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>--%>
  </div>
 </div>
 <script src="js/jquery.min.js"></script>
