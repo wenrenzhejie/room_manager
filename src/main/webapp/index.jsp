@@ -34,10 +34,10 @@
       <ul class="nav navbar-nav">
        <li><a href="#">首页</a></li>
         <li><a href="#aboutus" class="page-scroll">关于我们</a></li>
+          <li><a href="#gallery" class="page-scroll">预定房间</a></li>
 		<li><a href="#team" class="page-scroll">Team</a></li>
         <li><a href="#services" class="page-scroll">Services</a></li>
 		<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
-		<li><a href="#gallery" class="page-scroll">Gallery</a></li>
 		<li><a href="#contactus" class="page-scroll">Contact Us</a></li>
           <s:if test="%{#attr.userName != null}">
               <li><a href="#contactus" class="page-scroll" id="user">欢迎<s:property value="#attr.userName"></s:property></a></li>
@@ -127,18 +127,18 @@
 <div class="col-md-5 w3l_aboutdown5">
 <h6>Welcome</h6>
 <h3>About</h3>
-<p>Sunshine hotel management group co., ltd. was established in 2002, is a hotel tourism as the core business of the professional company, can provide all kinds of meetings, business activities, study abroad, tourism, training, recuperation, vacation and other comprehensive quality services.</p>
+<p>阳光酒店管理集团有限公司成立于2002年，是一家以酒店旅游为核心业务的专业公司，可提供各类会议、商务活动、留学、旅游、培训、疗养、度假等综合优质服务。</p>
  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read More</button>
   <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
 		<div class="modal-dialog" role="document">
              <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">SUNSHINE</h4>
+          <h4 class="modal-title">阳光酒店</h4>
         </div>
         <div class="modal-body">
-		<img src="images/about.jpg"  class="img-responsive" alt="tfg">
-          <p>We specialise in Code of Conduct.A code of conduct is a set of rules outlining the social norms and religious rules and responsibilities of, or proper practices for, an individual, party or organization. Related concepts include ethical, honor, moral codes and religious laws.</p>
+		<img src="images/about1.jpg"  class="img-responsive" alt="tfg">
+          <p>阳光酒店集团凭借专业的管理和优质的服务，自成立以来屡获殊荣。2009年度获得“星光奖-中国最佳酒店集团”、中国旅游饭店业协会颁发的“2009年中国饭店业最具规模的30家饭店管理公司（集团）”、“最佳民族酒店集团”；2010年获得“2010年酒店经理人国际精英论坛-最佳民族酒店”；2016年度，入围中国旅游饭店业协会评选的“中国饭店集团60强”。</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -151,13 +151,13 @@
 <div class="col-md-7 w3l_aboutside">
 <div class="w3l_aboutdown">
 <div class="w3l_aboutdown1">
-<img src="images/travel1.jpg" class="img-responsive">
+<img src="images/sun1.jpg" class="img-responsive" style="width: 550px;height:250px">
 <div class="w3l_aboutimgflex">
 <div class="col-md-5 w3l_imgflex">
-<img src="images/travel2.jpg" class="img-responsive">
+<img src="images/sun22.jpg" class="img-responsive" style="width: 630px;height:218px">
 </div>
 <div class="col-md-7 w3l_imgflex1">
-<img src="images/travel3.jpg" class="img-responsive">
+<img src="images/sun3.jpg" class="img-responsive" style="width: 600px;height:218px">
 </div>
 <div class="clearfix"></div>
 </div>
@@ -167,6 +167,156 @@
 </div>
 </div>
 <!--/About Us -->
+
+<!--/Testimonials-->
+<!--/gallery-->
+<div class="gallery" id="gallery">
+    <div class="container">
+        <%--<div class="tittle-w3">
+            <h3>及时预订</h3>
+        </div>--%>
+        <div class="tittle-w3" style="position: relative">
+            <div class="col-md-5 w3l_aboutdown" style="position: absolute;left: 495px;top: -20px;">
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1" style="background-color: #ffffff;border-color: #FFFFFF"><span style="color: red">查询预定</span></button>
+                <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">阳光酒店</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="images/about1.jpg"  class="img-responsive" alt="tfg">
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">查询</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="agile_gallery_grids w3-agile">
+            <ul class="clearfix demo">
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p1.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>单人间</h4>
+                            <p>NIGERIA.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p2.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>双人间</h4>
+                            <p>SWEDEN.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p3.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>三人间</h4>
+                            <p>SOUTH AFRICA.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p4.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>LONDON.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p5.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>AUSTRALIA.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p6.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>NEWZELAND.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p7.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>USA.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p8.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>BANGKOK.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p9.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>THAILAND.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p10.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>SINGAPORE.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p11.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>MALAYSIA.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <img src="images/p12.jpg" alt=" " class="img-responsive" />
+                        <div class="p-mask">
+                            <h4>ROVE</h4>
+                            <p>HONG KONG.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--//gallery-->
 
 <!--Team -->
 <div class="team" id="team">
@@ -445,7 +595,7 @@
 </div>
  </div>
 </div>
-<!--/Testimonials-->
+<%--<!--/Testimonials-->
 <!--/gallery-->
  <div class="gallery" id="gallery">
 	<div class="container">
@@ -567,7 +717,7 @@
 			</div>
 	</div>
 </div>
-<!--//gallery-->
+<!--//gallery-->--%>
 
 <!--Contact-->
 <div class="contactUs" id="contactus">
