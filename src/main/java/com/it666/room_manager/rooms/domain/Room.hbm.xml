@@ -11,6 +11,7 @@
         <property name="rnum"></property>
         <property name="price"></property>
         <property name="image"></property>
+        <property name="sell"></property>
         <property name="beginDate">
             <column name="beginDate" sql-type="datatime"></column>
         </property>

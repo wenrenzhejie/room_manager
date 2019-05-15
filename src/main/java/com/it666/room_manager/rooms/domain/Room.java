@@ -9,7 +9,7 @@ public class Room {
     private String rnum;
     private double price;
     private String image;
-    private boolean isSell;
+    private boolean sell;
     private Category category;
     private Date beginDate;
     private Date endDate;
@@ -63,11 +63,11 @@ public class Room {
     }
 
     public boolean isSell() {
-        return isSell;
+        return sell;
     }
 
     public void setSell(boolean sell) {
-        isSell = sell;
+        this.sell = sell;
     }
 
     public Category getCategory() {

@@ -6,6 +6,7 @@
     <package name="room" extends="common" namespace="/">
         <action name="room_*" class="com.it666.room_manager.rooms.action.RoomAction" method="{1}">
             <result name="findByCategoryId">/allrooms.jsp</result>
+            <result name="findById">/roomInfo.jsp</result>
         </action>
     </package>
 </struts>

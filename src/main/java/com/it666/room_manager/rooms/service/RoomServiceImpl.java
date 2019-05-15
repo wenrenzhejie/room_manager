@@ -16,4 +16,9 @@ public class RoomServiceImpl implements RoomService {
     public List<Room> findByCategoryId(String cid) {
         return roomDao.findByCategoryId(cid);
     }
+
+    @Override
+    public Room findById(Room room) {
+        return roomDao.findById(room);
+    }
 }

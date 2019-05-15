@@ -15,4 +15,15 @@ public class RoomDaoImpl extends HibernateDaoSupport implements RoomDao {
         List<Room> byCriteria = (List<Room>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
         return byCriteria;
     }
+
+    @Override
+    public Room findById(Room room) {
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Room.class);
+        detachedCriteria.add(Restrictions.eq("rid",room.getRid()));
+        List<Room> roomList = (List<Room>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+        if(roomList.size() == 1){
+            return roomList.get(0);
+        }
+        return null;
+    }
 }
