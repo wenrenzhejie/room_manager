@@ -12,4 +12,6 @@
     </package>
     <include file="com/it666/room_manager/configure/struts/struts-validatecode.xml"></include>
     <include file="com/it666/room_manager/configure/struts/struts-user.xml"></include>
+    <include file="com/it666/room_manager/configure/struts/struts-category.xml"></include>
+    <include file="com/it666/room_manager/configure/struts/struts-room.xml"></include>
 </struts>

@@ -35,6 +35,7 @@
        <li><a href="#">首页</a></li>
         <li><a href="#aboutus" class="page-scroll">关于我们</a></li>
           <li><a href="#gallery" class="page-scroll">预定房间</a></li>
+          <li><a href="#gallery" class="page-scroll">热门房间</a></li>
 		<li><a href="#team" class="page-scroll">Team</a></li>
         <li><a href="#services" class="page-scroll">Services</a></li>
 		<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
@@ -176,142 +177,24 @@
             <h3>及时预订</h3>
         </div>--%>
         <div class="tittle-w3" style="position: relative">
-            <div class="col-md-5 w3l_aboutdown" style="position: absolute;left: 495px;top: -20px;">
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1" style="background-color: #ffffff;border-color: #FFFFFF"><span style="color: red">查询预定</span></button>
-                <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">阳光酒店</h4>
-                            </div>
-                            <div class="modal-body">
-                                <img src="images/about1.jpg"  class="img-responsive" alt="tfg">
-                            </div>
-
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">查询</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
+            <h3>热门房间</h3>
+         </div>
         <div class="agile_gallery_grids w3-agile">
+
             <ul class="clearfix demo">
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p1.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>单人间</h4>
-                            <p>NIGERIA.</p>
+                <s:iterator value="categoryList">
+                    <li>
+                        <div class="gallery-grid1">
+                            <s:a namespace="/" action="room_findByCategoryId">
+                                <s:param name="category.cid" value="%{cid}"></s:param>
+                                <img src="images/r.jpg" alt=" " class="img-responsive" />
+                                <div class="p-mask">
+                                    <h4 style="text-align: center"><s:property value="cname"></s:property></h4>
+                                </div>
+                            </s:a>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p2.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>双人间</h4>
-                            <p>SWEDEN.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p3.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>三人间</h4>
-                            <p>SOUTH AFRICA.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p4.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>LONDON.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p5.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>AUSTRALIA.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p6.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>NEWZELAND.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p7.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>USA.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p8.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>BANGKOK.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p9.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>THAILAND.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p10.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>SINGAPORE.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p11.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>MALAYSIA.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="images/p12.jpg" alt=" " class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>ROVE</h4>
-                            <p>HONG KONG.</p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </s:iterator>
             </ul>
         </div>
     </div>
@@ -595,129 +478,6 @@
 </div>
  </div>
 </div>
-<%--<!--/Testimonials-->
-<!--/gallery-->
- <div class="gallery" id="gallery">
-	<div class="container">
-	<div class="tittle-w3">
-	<h3>Gallery</h3>
-	</div>
-	
-		<div class="agile_gallery_grids w3-agile">
-				<ul class="clearfix demo">
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p1.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-									<h4>ROVE</h4>
-								<p>NIGERIA.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p2.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-								<h4>ROVE</h4>
-								<p>SWEDEN.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p3.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-							<h4>ROVE</h4>
-								<p>SOUTH AFRICA.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p4.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-								<h4>ROVE</h4>
-								<p>LONDON.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p5.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-									<h4>ROVE</h4>
-								<p>AUSTRALIA.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p6.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-									<h4>ROVE</h4>
-								<p>NEWZELAND.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p7.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-									<h4>ROVE</h4>
-								<p>USA.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p8.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-								<h4>ROVE</h4>
-								<p>BANGKOK.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p9.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-									<h4>ROVE</h4>
-								<p>THAILAND.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p10.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-								<h4>ROVE</h4>
-								<p>SINGAPORE.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p11.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-									<h4>ROVE</h4>
-								<p>MALAYSIA.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="gallery-grid1">
-							<img src="images/p12.jpg" alt=" " class="img-responsive" />
-							<div class="p-mask">
-									<h4>ROVE</h4>
-								<p>HONG KONG.</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-	</div>
-</div>
-<!--//gallery-->--%>
 
 <!--Contact-->
 <div class="contactUs" id="contactus">
@@ -811,6 +571,40 @@ $().UItoTop({ easingType: 'easeOutQuart' });
 					});
 				</script>
 <!--//gallery-js -->
+
+<script type="text/javascript">
+    function search() {
+        alert("aaaaaaaaaaaa");
+        var begin = document.getElementById("beginDate");
+        var beginDate = begin.value;
+        var end = document.getElementById("endDate");
+        var endDate = end.value;
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                post.innerHTML = "";
+                var jsonData = xmlhttp.responseText;
+                var jsonObject = eval("("+jsonData+")");
+                for(var i = 0;i<jsonObject.length;i++){
+                    post.innerHTML += "<option value="+jsonObject[i].postId+">"+jsonObject[i].postName+"</option>";
+                }
+            }
+        };
+        var url = "${pageContext.servletContext.contextPath}/post_myAjax?crmDepartment.depId="+dep;
+        xmlhttp.open("GET",url);
+        xmlhttp.send(null);
+    }
+</script>
 
 
 </body>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="room" extends="common" namespace="/">
+        <action name="room_*" class="com.it666.room_manager.rooms.action.RoomAction" method="{1}">
+            <result name="findByCategoryId">/allrooms.jsp</result>
+        </action>
+    </package>
+</struts>

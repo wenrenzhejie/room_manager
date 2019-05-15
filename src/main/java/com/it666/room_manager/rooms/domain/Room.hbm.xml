@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.it666.room_manager.rooms.domain.Room" table="room">
+        <id name="rid">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="rnum"></property>
+        <property name="price"></property>
+        <property name="image"></property>
+        <property name="beginDate">
+            <column name="beginDate" sql-type="datatime"></column>
+        </property>
+        <property name="endDate">
+            <column name="endDate" sql-type="datatime"></column>
+        </property>
+        <many-to-one name="category" class="com.it666.room_manager.category.domain.Category" column="cid"></many-to-one>
+    </class>
+</hibernate-mapping>
