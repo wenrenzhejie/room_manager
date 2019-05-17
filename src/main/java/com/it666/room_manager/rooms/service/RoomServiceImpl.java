@@ -21,4 +21,9 @@ public class RoomServiceImpl implements RoomService {
     public Room findById(Room room) {
         return roomDao.findById(room);
     }
+
+    @Override
+    public void update(Room r) {
+        roomDao.update(r);
+    }
 }

@@ -51,9 +51,9 @@
               <s:if test="%{#attr.userName != null}">
                   <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/user_quit" id="navLogin">退出</a>
               </s:if>
-              <s:else>
+              <s:if test="%{#attr.userName == null}">
                   <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/login.jsp" id="navLogin">登录</a>
-              </s:else>
+              </s:if>
 
           </li>
         </ul>

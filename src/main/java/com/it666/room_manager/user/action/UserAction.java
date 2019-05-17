@@ -8,6 +8,7 @@ import com.it666.room_manager.user.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import org.springframework.aop.aspectj.AspectJAopUtils;
 
 import javax.mail.Session;
 import java.text.MessageFormat;
@@ -119,17 +120,18 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 
     public String login(){
         try {
-            System.out.println("钱");
+            System.out.println("前");
             System.out.println(user.getUsername());
             System.out.println(user.getPassword());
-            userService.login(user);
-            System.out.println("h后");
+            User u = userService.login(user);
+            ActionContext.getContext().getSession().put("userName",user.getUsername());
+            ActionContext.getContext().getSession().put("uid",u.getUid());
+            System.out.println("userssssssssssssssssssssss:"+u.getUid());
         } catch (UserException e) {
             this.addFieldError("login_error",e.getMessage());
             return "login_failed";
         }
-        ActionContext.getContext().getSession().put("userName",user.getUsername());
-        System.out.println("user");
+
         return "login_success";
     }
 

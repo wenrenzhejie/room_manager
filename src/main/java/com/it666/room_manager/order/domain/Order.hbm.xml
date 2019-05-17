@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.it666.room_manager.order.domain.Order" table="orders">
+        <id name="oid">
+            <generator class="uuid"></generator>
+        </id>
+
+        <many-to-one name="user" class="com.it666.room_manager.user.domain.User" column="uid" cascade="save-update"></many-to-one>
+        <many-to-one name="room" class="com.it666.room_manager.rooms.domain.Room" column="rid" cascade="save-update"></many-to-one>
+        <property name="subtotal"></property>
+    </class>
+</hibernate-mapping>

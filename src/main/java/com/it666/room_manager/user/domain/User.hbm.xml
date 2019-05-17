@@ -13,5 +13,11 @@
         <property name="email"></property>
         <property name="activecode"></property>
         <property name="state"></property>
+        <set name="orderSet">
+            <key column="uid"></key>
+            <one-to-many class="com.it666.room_manager.order.domain.Order"></one-to-many>
+        </set>
+        <property name="idCard"></property>
+        <property name="telephone"></property>
     </class>
 </hibernate-mapping>

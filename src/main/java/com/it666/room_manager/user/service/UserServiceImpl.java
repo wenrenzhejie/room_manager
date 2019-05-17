@@ -41,12 +41,28 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void login(User user) throws UserException {
+    public User login(User user) throws UserException {
         User u1 = userDao.findByName(user.getUsername());
         System.out.println(u1.getUsername()+":"+u1.getPassword());
         if(u1 == null || !u1.getPassword().equals(user.getPassword())){
             System.out.println(!u1.getPassword().equals(user.getPassword()));
             throw new UserException("用户名或密码错误");
         }
+        return u1;
+    }
+
+    @Override
+    public User findByName(String username) {
+        return userDao.findByName(username);
+    }
+
+    @Override
+    public void updateUser(User u) {
+        userDao.updateUser(u);
+    }
+
+    @Override
+    public User findById(String uid) {
+        return userDao.findById(uid);
     }
 }

@@ -7,11 +7,11 @@
         <action name="user_*" class="com.it666.room_manager.user.action.UserAction" method="{1}">
             <result name="regist_success">/regist_success.jsp</result>
             <result name="regist_failed">/regist.jsp</result>
-            <result name="acive_success">/index.jsp</result>
+            <result name="acive_success">/real_index.jsp</result>
             <result name="active_failed">/active_failed.jsp</result>
             <result name="login_failed">/login.jsp</result>
-            <result name="login_success">/index.jsp</result>
-            <result name="quit_success">/index.jsp</result>
+            <result name="login_success">/real_index.jsp</result>
+            <result name="quit_success">/real_index.jsp</result>
         </action>
     </package>
 </struts>

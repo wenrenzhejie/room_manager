@@ -1,8 +1,11 @@
 package com.it666.room_manager.rooms.domain;
 
 import com.it666.room_manager.category.domain.Category;
+import com.it666.room_manager.order.domain.Order;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Room {
     private String rid;
@@ -11,23 +14,23 @@ public class Room {
     private String image;
     private boolean sell;
     private Category category;
-    private Date beginDate;
-    private Date endDate;
+    private String rdesc;
+    private Set<Order> orderSet = new HashSet<>();
 
-    public Date getBeginDate() {
-        return beginDate;
+    public Set<Order> getOrderSet() {
+        return orderSet;
     }
 
-    public void setBeginDate(Date beginDate) {
-        this.beginDate = beginDate;
+    public void setOrderSet(Set<Order> orderSet) {
+        this.orderSet = orderSet;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public String getRdesc() {
+        return rdesc;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setRdesc(String rdesc) {
+        this.rdesc = rdesc;
     }
 
     public String getRid() {
@@ -77,4 +80,6 @@ public class Room {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+
 }

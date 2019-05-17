@@ -8,4 +8,6 @@ public interface UserDao {
     public void regist(User user);
     public User findByActiveCode(String activecode);
     public void active(User u1);
+    public void updateUser(User u);
+    public User findById(String uid);
 }

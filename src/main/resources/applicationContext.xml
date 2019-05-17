@@ -56,4 +56,5 @@
     <import resource="classpath:com/it666/room_manager/configure/spring/applicationContext-user.xml"></import>
     <import resource="classpath:com/it666/room_manager/configure/spring/applicationContext-category.xml"></import>
     <import resource="classpath:com/it666/room_manager/configure/spring/applicationContext-room.xml"></import>
+    <import resource="classpath:com/it666/room_manager/configure/spring/applicationContext-order.xml"></import>
 </beans>

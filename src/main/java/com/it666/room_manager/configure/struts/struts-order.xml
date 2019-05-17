@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="order" extends="common" namespace="/">
+        <action name="order_*" class="com.it666.room_manager.order.action.OrderAction" method="{1}">
+            <result name="preOrder">/order.jsp</result>
+        </action>
+    </package>
+</struts>

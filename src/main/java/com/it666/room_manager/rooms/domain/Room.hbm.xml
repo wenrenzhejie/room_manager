@@ -12,12 +12,11 @@
         <property name="price"></property>
         <property name="image"></property>
         <property name="sell"></property>
-        <property name="beginDate">
-            <column name="beginDate" sql-type="datatime"></column>
-        </property>
-        <property name="endDate">
-            <column name="endDate" sql-type="datatime"></column>
-        </property>
+        <property name="rdesc"></property>
         <many-to-one name="category" class="com.it666.room_manager.category.domain.Category" column="cid"></many-to-one>
+        <set name="orderSet">
+            <key column="rid"></key>
+            <one-to-many class="com.it666.room_manager.order.domain.Order"></one-to-many>
+        </set>
     </class>
 </hibernate-mapping>

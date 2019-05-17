@@ -26,4 +26,9 @@ public class RoomDaoImpl extends HibernateDaoSupport implements RoomDao {
         }
         return null;
     }
+
+    @Override
+    public void update(Room r) {
+        this.getHibernateTemplate().update(r);
+    }
 }

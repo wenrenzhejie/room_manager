@@ -8,4 +8,6 @@ public interface RoomDao {
     public List<Room> findByCategoryId(String cid);
 
     public Room findById(Room room);
+
+    public void update(Room r);
 }
