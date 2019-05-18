@@ -19,5 +19,6 @@
         </set>
         <property name="idCard"></property>
         <property name="telephone"></property>
+        <property name="real_name"></property>
     </class>
 </hibernate-mapping>

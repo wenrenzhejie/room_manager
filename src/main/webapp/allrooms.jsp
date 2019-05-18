@@ -19,6 +19,28 @@
     <script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap-datepicker.js"></script>
+
+    <style>
+        .fcon{
+            margin-top: 10px;
+        }
+        .fcon .p{
+           border:0px;
+            color: red;
+        }
+        .fcon .s{
+            margin-top: 10px;
+            margin-right: 10px;
+            font-weight: bolder;
+        }
+        .fcon .b{
+            background-color: transparent;
+            color: black;
+            background-image: url("images/p1.jpg");
+            width: 100%;
+            height: 34px;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,7 +50,7 @@
         <div class="row pt-md">
             <s:iterator value="roomList">
                 <div class="col-md-3 w3ls_profile">
-                    <button type="button" <%--class="btn btn-info btn-lg"--%> data-toggle="modal" data-target="#myModal" style="border:0;padding: 0" onclick="search()"><div>
+                    <button type="button" <%--class="btn btn-info btn-lg"--%> data-toggle="modal" data-target="#myModal" style="border:0;padding: 0" onclick="search(this)" value="${rid}"><div>
                         <img src="${pageContext.servletContext.contextPath}/${image}" class="img-responsive">
                     </div>
                     </button>
@@ -58,12 +80,12 @@
                         </div>
                         <div class="modal-body">
                             <img src="images/about1.jpg"  class="img-responsive" alt="tfg" id="img">
-                            <form action="${pageContext.servletContext.contextPath}/order_preOrder" id="form">
+                            <form action="${pageContext.servletContext.contextPath}/order_preOrder" id="form" class="fcon">
                             <input type="hidden" name="room.rid" value="1" id="rid">
-                                房间号:<input type="text" value="121" id="rnum"><br>
-                                元/晚:<input type="text" value="121" id="price"><br>
-                                描述:<input type="text" id="rdesc"><br>
-                                <input type="submit" value="预订" id="submit">
+                                <span class="s">房间号:</span><input type="text" value="121" id="rnum" class="p" readonly="readonly"><br>
+                                <span class="s">元/晚&nbsp;&nbsp;&nbsp;:</span><input type="text" value="121" id="price" class="p" readonly="readonly"><br>
+                                <span class="s">描述:</span><textarea class="pdesc" id="rdesc" readonly="readonly"></textarea>
+                                <input type="submit" value="预订" id="submit" class="b">
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -127,13 +149,14 @@
 <!--//gallery-js -->
 
 <script type="text/javascript">
-    function search(rid) {
-        alert("aaaaaaaaaaaa");
+    function search(obj) {
+        var v =obj.value;
         var image = document.getElementById("img");
         var roomid = document.getElementById("rid");
         var roomnum = document.getElementById("rnum");
         var roomprice = document.getElementById("price");
         var submit = document.getElementById("submit");
+        var roomDesc = document.getElementById("rdesc");
         var xmlhttp;
         if (window.XMLHttpRequest)
         {
@@ -154,18 +177,20 @@
                 console.log(img);
                 var rid = jsonObject.rid;
                 var rum = jsonObject.rnum;
-                var price = jsonObject.price;
+                var price = jsonObject.price+"￥";
                 var sell = jsonObject.sell;
+                var desc = jsonObject.rdesc;
                 image.src=img;
                 roomid.value=rid;
                 roomprice.value=price;
                 roomnum.value=rum;
+                roomDesc.value=desc;
                 if(sell){
                     submit.style.display="none"
                 }
             }
         };
-        var url = "${pageContext.servletContext.contextPath}/room_findById?rid=r1";
+        var url = "${pageContext.servletContext.contextPath}/room_findById?rid="+v;
         xmlhttp.open("GET",url);
         xmlhttp.send(null);
     }

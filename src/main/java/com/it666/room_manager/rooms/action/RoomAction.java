@@ -36,13 +36,15 @@ public class RoomAction extends ActionSupport implements ModelDriven<Room> {
     public String findById() throws IOException {
         TargetStrategy ts = new TargetStrategy(Room.class);
         //这里表示仅转换CrmPost中的id和name属性
-        ts.setFields(new String[] {"rid", "rnum","price","image","sell"});
+        ts.setFields(new String[] {"rid", "rnum","price","image","sell","rdesc"});
         ts.setReverse(true);
 
         Room room1 = roomService.findById(room);
         System.out.println(room1);
         Gson gson = new GsonBuilder().setExclusionStrategies(ts).create();
         String s = gson.toJson(room1);
+        System.out.println(s);
+        ServletActionContext.getResponse().setContentType("text/xml;charset=utf-8");
         ServletActionContext.getResponse().getWriter().write(s);
         return NONE;
     }

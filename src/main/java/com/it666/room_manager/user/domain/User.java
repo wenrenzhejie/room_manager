@@ -18,6 +18,15 @@ public class User {
     private Set<Order> orderSet = new HashSet<>();
     private String idCard;
     private String telephone;
+    private String real_name;
+
+    public String getReal_name() {
+        return real_name;
+    }
+
+    public void setReal_name(String real_name) {
+        this.real_name = real_name;
+    }
 
     public String getIdCard() {
         return idCard;

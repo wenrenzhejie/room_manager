@@ -41,24 +41,21 @@
 		<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
 		<li><a href="#contactus" class="page-scroll">Contact Us</a></li>
           <s:if test="%{#attr.userName != null}">
-              <li><a href="#contactus" class="page-scroll" id="user">欢迎<s:property value="#attr.userName"></s:property></a></li>
+              <li><a href="#" class="page-scroll" id="user">欢迎您!  <s:property value="#attr.userName"></s:property></a>
+              </li>
+              <li><a href="${pageContext.servletContext.contextPath}/user_quit">退出</a></li>
           </s:if>
-
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <ul class="nav pull-right">
-          <li class="dropdown" id="menuLogin">
-              <s:if test="%{#attr.userName != null}">
-                  <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/user_quit" id="navLogin">退出</a>
-              </s:if>
-              <s:if test="%{#attr.userName == null}">
-                  <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/login.jsp" id="navLogin">登录</a>
-              </s:if>
+        <s:if test="%{#attr.userName == null}">
+            <ul class="nav navbar-nav navbar-right">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="${pageContext.servletContext.contextPath}/login.jsp" id="navLogin">登录</a>
+                    </li>
+                </ul>
+            </ul>
+        </s:if>
 
-          </li>
-        </ul>
-
-      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
