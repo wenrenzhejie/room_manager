@@ -182,7 +182,7 @@
                 <s:iterator value="categoryList">
                     <li>
                         <div class="gallery-grid1">
-                            <s:a namespace="/" action="room_findByCategoryId">
+                            <s:a namespace="/" action="room_chooseDate">
                                 <s:param name="category.cid" value="%{cid}"></s:param>
                                 <img src="images/r.jpg" alt=" " class="img-responsive" />
                                 <div class="p-mask">

@@ -10,22 +10,12 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-import java.util.Date;
 import java.util.UUID;
 
 public class OrderAction extends ActionSupport implements ModelDriven<Order> {
     private OrderService orderService;
     private RoomService roomService;
     private UserService userService;
-    private Date beginDate;
-    private Date endDate;
-    public void setBeginDate(Date beginDate) {
-        this.beginDate = beginDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
 
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -60,15 +50,11 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
         u.setReal_name(order.getUser().getReal_name());
 
         Room r = roomService.findById(order.getRoom());
-        r.setSell(true);
-
         order.setUser(u);
         order.setRoom(r);
-        long l = endDate.getTime() - beginDate.getTime();
+        long l = order.getEndDate().getTime() - order.getBeginDate().getTime();
         int d = (int) (l/(24*60*60*1000));
-        System.out.println(d);
         order.setSubtotal(r.getPrice()*d);
-
         orderService.addOrder(order);
         Room byId = roomService.findById(r);
         System.out.println(byId.getOrderSet().size());

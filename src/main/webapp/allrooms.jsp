@@ -57,10 +57,15 @@
                     <h3 class="w3layouts_team">${rnum}</h3>
                         <h5 style="color: red;margin-left: 96px"><s:property value="price"></s:property>￥/晚</h5>
                     <s:if test="%{sell}">
-                        <h5 style="color: red;margin-left: 96px">已定出</h5>
+                        <h5 style="color: red;margin-left: 96px">所选时间段该房已定出</h5>
                     </s:if>
                     <s:else>
-                        <h5 style="color: red;margin-left: 96px">待定出</h5>
+                        <h5 style="color: red;margin-left: 96px">
+                            <s:a namespace="/" action="order_preOrder">
+                                <s:param name="room.rid" value="%{rid}"></s:param>
+                                去订购
+                            </s:a>
+                        </h5>
                     </s:else>
                 </div>
             </s:iterator>
@@ -85,7 +90,6 @@
                                 <span class="s">房间号:</span><input type="text" value="121" id="rnum" class="p" readonly="readonly"><br>
                                 <span class="s">元/晚&nbsp;&nbsp;&nbsp;:</span><input type="text" value="121" id="price" class="p" readonly="readonly"><br>
                                 <span class="s">描述:</span><textarea class="pdesc" id="rdesc" readonly="readonly"></textarea>
-                                <input type="submit" value="预订" id="submit" class="b">
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -155,7 +159,6 @@
         var roomid = document.getElementById("rid");
         var roomnum = document.getElementById("rnum");
         var roomprice = document.getElementById("price");
-        var submit = document.getElementById("submit");
         var roomDesc = document.getElementById("rdesc");
         var xmlhttp;
         if (window.XMLHttpRequest)
@@ -174,20 +177,15 @@
                 var jsonObject = eval("("+jsonData+")");
                 console.log(jsonObject);
                 var img = jsonObject.image;
-                console.log(img);
                 var rid = jsonObject.rid;
                 var rum = jsonObject.rnum;
                 var price = jsonObject.price+"￥";
-                var sell = jsonObject.sell;
                 var desc = jsonObject.rdesc;
                 image.src=img;
                 roomid.value=rid;
                 roomprice.value=price;
                 roomnum.value=rum;
                 roomDesc.value=desc;
-                if(sell){
-                    submit.style.display="none"
-                }
             }
         };
         var url = "${pageContext.servletContext.contextPath}/room_findById?rid="+v;

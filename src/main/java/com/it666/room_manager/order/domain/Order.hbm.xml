@@ -12,5 +12,11 @@
         <many-to-one name="user" class="com.it666.room_manager.user.domain.User" column="uid" cascade="save-update"></many-to-one>
         <many-to-one name="room" class="com.it666.room_manager.rooms.domain.Room" column="rid" cascade="save-update"></many-to-one>
         <property name="subtotal"></property>
+        <property name="beginDate">
+            <column name="beginDate" sql-type="datetime"></column>
+        </property>
+        <property name="endDate">
+            <column name="endDate" sql-type="datetime"></column>
+        </property>
     </class>
 </hibernate-mapping>

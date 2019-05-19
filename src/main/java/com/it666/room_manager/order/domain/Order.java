@@ -3,11 +3,31 @@ package com.it666.room_manager.order.domain;
 import com.it666.room_manager.rooms.domain.Room;
 import com.it666.room_manager.user.domain.User;
 
+import java.util.Date;
+
 public class Order{
     private String oid;
     private User user;
     private Room room;
     private double subtotal;
+    private Date beginDate;
+    private Date endDate;
+
+    public Date getBeginDate() {
+        return beginDate;
+    }
+
+    public void setBeginDate(Date beginDate) {
+        this.beginDate = beginDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
 
     public double getSubtotal() {
         return subtotal;
