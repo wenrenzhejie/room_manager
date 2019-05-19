@@ -10,4 +10,9 @@ import java.util.List;
 public interface OrderDao {
     public void saveOrder(Order order);
     public List<Order> findByRid(Room room);
+    public List<Order> findByUserId(String uid);
+    public void deleteById(Order order);
+    public void payAll(String uid);
+
+    public void payById(String oid);
 }

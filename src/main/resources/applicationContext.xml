@@ -47,6 +47,7 @@
             <tx:method name="active*"/>
             <tx:method name="regist*"/>
             <tx:method name="login*"/>
+            <tx:method name="pay*"/>
         </tx:attributes>
     </tx:advice>
 

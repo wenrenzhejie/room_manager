@@ -38,4 +38,24 @@ public class OrderServiceImpl implements OrderService {
        }
        return flag;
     }
+
+    @Override
+    public List<Order> findByUserId(String uid) {
+        return orderDao.findByUserId(uid);
+    }
+
+    @Override
+    public void deleteById(Order order) {
+        orderDao.deleteById(order);
+    }
+
+    @Override
+    public void payAll(String uid) {
+        orderDao.payAll(uid);
+    }
+
+    @Override
+    public void payById(String oid) {
+        orderDao.payById(oid);
+    }
 }

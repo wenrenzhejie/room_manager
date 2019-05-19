@@ -18,5 +18,9 @@
         <property name="endDate">
             <column name="endDate" sql-type="datetime"></column>
         </property>
+        <property name="successTime">
+            <column name="successTime" sql-type="datetime"></column>
+        </property>
+        <property name="status"></property>
     </class>
 </hibernate-mapping>

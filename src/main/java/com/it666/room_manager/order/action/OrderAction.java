@@ -10,6 +10,8 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class OrderAction extends ActionSupport implements ModelDriven<Order> {
@@ -55,14 +57,35 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
         long l = order.getEndDate().getTime() - order.getBeginDate().getTime();
         int d = (int) (l/(24*60*60*1000));
         order.setSubtotal(r.getPrice()*d);
+        order.setSuccessTime(new Date());
         orderService.addOrder(order);
         Room byId = roomService.findById(r);
         System.out.println(byId.getOrderSet().size());
         User u1 = userService.findById(uid);
-        return NONE;
+        return "addOrder";
     }
 
-    public String allOrders(){
-        return "allOrders";
+    public String findByUserId(){
+        String uid = (String) ActionContext.getContext().getSession().get("uid");
+        List<Order> orderList = orderService.findByUserId(uid);
+        ActionContext.getContext().getValueStack().set("orderList",orderList);
+        return "findByUserId";
+    }
+
+    public String cancle(){
+        orderService.deleteById(order);
+        return "cancle";
+    }
+    public String payAll(){
+        String uid = (String) ActionContext.getContext().getSession().get("uid");
+        System.out.println(uid);
+        orderService.payAll(uid);
+        return "payAll";
+    }
+
+    public String payById(){
+        System.out.println(order.getOid());
+        orderService.payById(order.getOid());
+        return "payById";
     }
 }

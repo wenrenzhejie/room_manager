@@ -6,6 +6,11 @@
     <package name="order" extends="common" namespace="/">
         <action name="order_*" class="com.it666.room_manager.order.action.OrderAction" method="{1}">
             <result name="preOrder">/order.jsp</result>
+            <result name="addOrder" type="redirect">order_findByUserId</result>
+            <result name="findByUserId">/orderList.jsp</result>
+            <result name="cancle" type="redirect">order_findByUserId</result>
+            <result name="payAll" type="redirect">order_findByUserId</result>
+            <result name="payById" type="redirect">/pay.jsp</result>
         </action>
     </package>
 </struts>

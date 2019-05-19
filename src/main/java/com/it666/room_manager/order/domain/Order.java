@@ -12,6 +12,23 @@ public class Order{
     private double subtotal;
     private Date beginDate;
     private Date endDate;
+    private Date successTime;
+    private boolean status;
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public Date getSuccessTime() {
+        return successTime;
+    }
+
+    public void setSuccessTime(Date successTime) {
+        this.successTime = successTime;
+    }
 
     public Date getBeginDate() {
         return beginDate;
