@@ -62,7 +62,7 @@
                 <td>离去时间：<s:date name="%{endDate}" var="d2" format="yyyy-MM-dd"></s:date><s:property value="#d2"></s:property></td>
                 <td>订单状态:<s:if test="%{status}">
                     <a href="/room_manager/real_index.jsp">已付款</a></s:if><s:else>
-                        <s:a namespace="/" action="order_payById">
+                        <s:a namespace="/" action="order_payByIdPre">
                             <s:param name="oid" value="%{oid}"></s:param>
                            未付款
                         </s:a></s:else>
@@ -76,20 +76,25 @@
 </s:iterator>
 
 <br/>
-<form method="post" action="javascript:alert('别点了，再点就去银行页面了！');" id="form" target="_parent">
-    选择银行：<br/>
-    <input type="radio" name="pd_FrpId" value="ICBC-NET-B2C" checked="checked"/>工商银行
-    <img src="${pageContext.servletContext.contextPath}/bank_img/icbc.bmp" align="middle"/>
-    <input type="radio" name="pd_FrpId" value="BOC-NET-B2C"/>中国银行
-    <img src="${pageContext.servletContext.contextPath}/bank_img/bc.bmp" align="middle"/><br/><br/>
-    <input type="radio" name="pd_FrpId" value="ABC-NET-B2C"/>农业银行
-    <img src="${pageContext.servletContext.contextPath}/bank_img/abc.bmp" align="middle"/>
-    <input type="radio" name="pd_FrpId" value="CCB-NET-B2C"/>建设银行
-    <img src="${pageContext.servletContext.contextPath}/bank_img/ccb.bmp" align="middle"/><br/><br/>
-    <input type="radio" name="pd_FrpId" value="BOCO-NET-B2C"/>交通银行
-    <img src="${pageContext.servletContext.contextPath}/bank_img/bcc.bmp" align="middle"/><br/>
-</form>
-<a href="${pageContext.servletContext.contextPath}/order_payAll" id="pay"></a>
+<s:if test="%{orderList.size() != 0}">
+    <form method="post" action="javascript:alert('别点了，再点就去银行页面了！');" id="form" target="_parent">
+        选择银行：<br/>
+        <input type="radio" name="pd_FrpId" value="ICBC-NET-B2C" checked="checked"/>工商银行
+        <img src="${pageContext.servletContext.contextPath}/bank_img/icbc.bmp" align="middle"/>
+        <input type="radio" name="pd_FrpId" value="BOC-NET-B2C"/>中国银行
+        <img src="${pageContext.servletContext.contextPath}/bank_img/bc.bmp" align="middle"/><br/><br/>
+        <input type="radio" name="pd_FrpId" value="ABC-NET-B2C"/>农业银行
+        <img src="${pageContext.servletContext.contextPath}/bank_img/abc.bmp" align="middle"/>
+        <input type="radio" name="pd_FrpId" value="CCB-NET-B2C"/>建设银行
+        <img src="${pageContext.servletContext.contextPath}/bank_img/ccb.bmp" align="middle"/><br/><br/>
+        <input type="radio" name="pd_FrpId" value="BOCO-NET-B2C"/>交通银行
+        <img src="${pageContext.servletContext.contextPath}/bank_img/bcc.bmp" align="middle"/><br/>
+    </form>
+    <a href="${pageContext.servletContext.contextPath}/order_payAll" id="pay"></a>
+</s:if>
+<s:else>
+    <h3 style="color: red">您的订单为空，点击此处返回<a href="${pageContext.servletContext.contextPath}/real_index.jsp">首页</a></h3>
+</s:else>
 </body>
 </html>
 

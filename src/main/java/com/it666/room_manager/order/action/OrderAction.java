@@ -84,8 +84,13 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
     }
 
     public String payById(){
+        System.out.println("aaaaaaaaaaaaaa");
         System.out.println(order.getOid());
         orderService.payById(order.getOid());
         return "payById";
+    }
+    public String payByIdPre(){
+        ActionContext.getContext().getValueStack().set("oid",order.getOid());
+        return "payByIdPre";
     }
 }

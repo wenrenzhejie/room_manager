@@ -71,12 +71,12 @@
 			                        </div>
 
 			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-email">入住日期：</label>
-			                        	<input type="date" name="beginDate" class="form-email form-control">
+			                        	<label class="sr-only" for="form-email">入住日期：</label><s:date name="%{#session.beginDate}" var="bd" format="yyyy-MM-dd"></s:date>
+			                        	<input type="date" name="beginDate" class="form-email form-control" readonly="readonly" value="<s:property value="#bd"/>">
 			                        </div>
 			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-email">退房日期：</label>
-			                        	<input type="date" name="endDate" placeholder="退房日期..." class="form-email form-control">
+			                        	<label class="sr-only" for="form-email">退房日期：</label><s:date name="%{#session.endDate}" var="ed" format="yyyy-MM-dd"></s:date>
+			                        	<input type="date" name="endDate" placeholder="退房日期..." class="form-email form-control" readonly="readonly" value="<s:property value="#ed"/>">
 			                        </div>
 									<input type="submit" value="提交" class="btn">
 			                    </form>

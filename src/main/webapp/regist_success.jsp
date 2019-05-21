@@ -132,9 +132,7 @@
     <span>激</span>
     <span>活</span>
 </div>
-<p>${web}</p>
 <input type="hidden" name="web" value="${web}">
-
 <script type="text/javascript">
     var box = document.getElementById("box");
     box.onclick = function(){

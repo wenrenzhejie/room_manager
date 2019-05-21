@@ -47,6 +47,8 @@ public class RoomAction extends ActionSupport implements ModelDriven<Room> {
         return "chooseDate";
     }
     public String findByCategoryId(){
+        ActionContext.getContext().getSession().put("beginDate",beginDate1);
+        ActionContext.getContext().getSession().put("endDate",endDate1);
         List<Room> roomList = roomService.findByCategoryId(room.getCategory().getCid());
         System.out.println(roomList.size());
         System.out.println(beginDate1);

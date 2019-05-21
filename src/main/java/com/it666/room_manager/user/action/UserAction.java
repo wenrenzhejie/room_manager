@@ -79,10 +79,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
                 String receiver = user.getEmail();
                 String subject = pro.getProperty("subject");
                 String content=pro.getProperty("content");
-                System.out.println("code："+user.getActivecode());
                 //替换占位符
                 String format = MessageFormat.format(content, user.getActivecode());
-                System.out.println("format:"+format);
 
                 Session session = MailUtils.createSession(host, uname, pwd);
                 Mail mail = new Mail(from, receiver, subject, format);
@@ -107,9 +105,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 
     public String active(){
         try {
-            System.out.println("active");
             userService.active(user);
-            System.out.println(user.getActivecode());
         } catch (UserException e) {
             String message = e.getMessage();
             this.addFieldError("active_msg",message);
@@ -120,13 +116,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 
     public String login(){
         try {
-            System.out.println("前");
-            System.out.println(user.getUsername());
-            System.out.println(user.getPassword());
             User u = userService.login(user);
             ActionContext.getContext().getSession().put("userName",user.getUsername());
             ActionContext.getContext().getSession().put("uid",u.getUid());
-            System.out.println("userssssssssssssssssssssss:"+u.getUid());
         } catch (UserException e) {
             this.addFieldError("login_error",e.getMessage());
             return "login_failed";

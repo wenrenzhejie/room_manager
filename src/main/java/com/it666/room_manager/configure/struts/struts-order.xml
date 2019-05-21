@@ -10,7 +10,8 @@
             <result name="findByUserId">/orderList.jsp</result>
             <result name="cancle" type="redirect">order_findByUserId</result>
             <result name="payAll" type="redirect">order_findByUserId</result>
-            <result name="payById" type="redirect">/pay.jsp</result>
+            <result name="payByIdPre">/pay.jsp</result>
+            <result name="payById" type="redirect">order_findByUserId</result>
         </action>
     </package>
 </struts>

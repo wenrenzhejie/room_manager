@@ -35,11 +35,11 @@
        <li><a href="#">首页</a></li>
         <li><a href="#aboutus" class="page-scroll">关于我们</a></li>
           <li><a href="#gallery" class="page-scroll">预定房间</a></li>
-          <li><a href="#gallery" class="page-scroll">热门房间</a></li>
+          <%--<li><a href="#gallery" class="page-scroll">热门房间</a></li>--%>
 		<li><a href="#team" class="page-scroll">Team</a></li>
         <li><a href="#services" class="page-scroll">Services</a></li>
 		<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
-		<li><a href="#contactus" class="page-scroll">Contact Us</a></li>
+		<li><a href="#contactus" class="page-scroll">联系我们</a></li>
           <s:if test="%{#attr.userName != null}">
               <li><a href="#" class="page-scroll" id="user">欢迎您!  <s:property value="#attr.userName"></s:property></a>
               </li>

@@ -57,7 +57,7 @@
                     <h3 class="w3layouts_team">${rnum}</h3>
                         <h5 style="color: red;margin-left: 96px"><s:property value="price"></s:property>￥/晚</h5>
                     <s:if test="%{sell}">
-                        <h5 style="color: red;margin-left: 96px">所选时间段该房已定出</h5>
+                        <h5 style="color: red;margin-left: 96px">该房已定出</h5>
                     </s:if>
                     <s:else>
                         <h5 style="color: red;margin-left: 96px">
