@@ -30,8 +30,8 @@
             </div>
             <div class="tpl-skiner-content">
                 <div class="tpl-skiner-content-title">
-                    选择主题
-                </div>
+
+            </div>
                 <div class="tpl-skiner-content-bar">
                     <span class="skiner-color skiner-white" data-color="theme-white"></span>
                     <span class="skiner-color skiner-black" data-color="theme-black"></span>

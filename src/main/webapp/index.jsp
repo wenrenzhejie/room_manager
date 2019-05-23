@@ -36,9 +36,7 @@
         <li><a href="#aboutus" class="page-scroll">关于我们</a></li>
           <li><a href="#gallery" class="page-scroll">预定房间</a></li>
           <%--<li><a href="#gallery" class="page-scroll">热门房间</a></li>--%>
-		<li><a href="#team" class="page-scroll">Team</a></li>
-        <li><a href="#services" class="page-scroll">Services</a></li>
-		<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
+		<li><a href="#team" class="page-scroll">年度之星</a></li>
 		<li><a href="#contactus" class="page-scroll">联系我们</a></li>
           <s:if test="%{#attr.userName != null}">
               <li><a href="#" class="page-scroll" id="user">欢迎您!  <s:property value="#attr.userName"></s:property></a>
@@ -201,57 +199,57 @@
 <!--Team -->
 <div class="team" id="team">
   <div class="container">
-          <h3>OUR GUIDES</h3>
+          <h3>年度之星</h3>
           <div class="row pt-md">
             <div class="col-md-3 w3ls_profile">
               <div class="img-box">
-                <img src="images/fashion-2940243_640.jpg" class="img-responsive">
+                <img src="images/r1.jpg" class="img-responsive">
                 <ul class="text-center">
                   <a href="#"><li><i class="fa fa-facebook"></i></li></a>
                   <a href="#"><li><i class="fa fa-twitter"></i></li></a>
                   <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
                 </ul>
               </div>
-              <h3>Marrie Doi</h3> 
+              <h3>唐三</h3>
               <h3 class="w3layouts_team"> Operations</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="col-md-3 w3ls_profile">
               <div class="img-box">
-                <img src="images/portrait-1961529_640.jpg" class="img-responsive">
+                <img src="images/r2.jpg" class="img-responsive">
                 <ul class="text-center">
                   <a href="#"><li><i class="fa fa-facebook"></i></li></a>
                   <a href="#"><li><i class="fa fa-twitter"></i></li></a>
                   <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
                 </ul>
               </div>
-              <h3>Christopher Di</h3> 
+              <h3>小舞</h3>
               <h3 class="w3layouts_team">Projects</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="col-md-3 w3ls_profile">
               <div class="img-box">
-                <img src="images/portrait-2917643_640.jpg" class="img-responsive">
+                <img src="images/r3.jpg" class="img-responsive">
                 <ul class="text-center">
                   <a href="#"><li><i class="fa fa-facebook"></i></li></a>
                   <a href="#"><li><i class="fa fa-twitter"></i></li></a>
                   <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
                 </ul>
               </div>
-              <h3>Heather H</h3> 
+              <h3>朱竹青</h3>
               <h3 class="w3layouts_team">Marketing</h3> 
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="col-md-3 w3ls_profile">
               <div class="img-box">
-                <img src="images/people-2590560_640.jpg" class="img-responsive">
+                <img src="images/r4.jpg" class="img-responsive">
                 <ul class="text-center">
                   <a href="#"><li><i class="fa fa-facebook"></i></li></a>
                   <a href="#"><li><i class="fa fa-twitter"></i></li></a>
                   <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
                 </ul>
               </div>
-              <h3>John Doe</h3> 
+              <h3>戴沐白</h3>
               <h3 class="w3layouts_team">Guide</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
@@ -260,221 +258,7 @@
 		   </div>
 <!--/Team -->
 		   
-<!--Services-->
-<div class="services" id="services">
-<h3>Services</h3>
-<div class="container">
-              <div class="col-md-4 wthree_service">
-                <figure class="services-icon">
-                  <i class="fa fa-paint-brush" aria-hidden="true"></i>
-                </figure>
-                <div class="title-services"> Accomidations </div>
-                <div class="content-services"> Create a beautiful, functional site that speaks to your clients. From scratch. </div>
-<a href="#" data-toggle="modal" data-target="#myModal1">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-  <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
-		<div class="modal-dialog" role="document">
-             <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ROVE</h4>
-        </div>
-        <div class="modal-body">
-		<img src="images/accomidation.jpg"  class="img-responsive" alt="tfg">
-          <p>We specialise in Code of Conduct.A code of conduct is a set of rules outlining the social norms and religious rules and responsibilities of, or proper practices for, an individual, party or organization. Related concepts include ethical, honor, moral codes and religious laws.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-              </div>
-              <div class="col-md-4 wthree_service">
-                <figure class="services-icon">
-                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </figure>
-                <div class="title-services"> Agents </div>
-                <div class="content-services"> Create a beautiful, functional site that speaks to your clients. From scratch. </div>
-				<a href="#" data-toggle="modal" data-target="#myModal1">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-  <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
-		<div class="modal-dialog" role="document">
-             <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ROVE</h4>
-        </div>
-        <div class="modal-body">
-		<img src="images/accomidation.jpg"  class="img-responsive" alt="tfg">
-          <p>We specialise in Code of Conduct.A code of conduct is a set of rules outlining the social norms and religious rules and responsibilities of, or proper practices for, an individual, party or organization. Related concepts include ethical, honor, moral codes and religious laws.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>  
-              </div>
-              <div class="col-md-4 wthree_service">
-                <figure class="services-icon">
-                  <i class="fa fa-line-chart" aria-hidden="true"></i>
-                </figure>
-                <div class="title-services"> Charter </div>
-                <div class="content-services"> Create a beautiful, functional site that speaks to your clients. From scratch.</div>
-				<a href="#" data-toggle="modal" data-target="#myModal1">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-  <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
-		<div class="modal-dialog" role="document">
-             <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ROVE</h4>
-        </div>
-        <div class="modal-body">
-		<img src="images/accomidation.jpg"  class="img-responsive" alt="tfg">
-          <p>We specialise in Code of Conduct.A code of conduct is a set of rules outlining the social norms and religious rules and responsibilities of, or proper practices for, an individual, party or organization. Related concepts include ethical, honor, moral codes and religious laws.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-             <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >自助建站</a></div>
-              </div>
-                <div class="col-md-4 wthree_service">
-                <figure class="services-icon">
-                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                </figure>
-                <div class="title-services">Guide </div>
-                <div class="content-services"> Create a beautiful, functional site that speaks to your clients. From scratch. </div>
-				<a href="#" data-toggle="modal" data-target="#myModal1">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-  <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
-		<div class="modal-dialog" role="document">
-             <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ROVE</h4>
-        </div>
-        <div class="modal-body">
-		<img src="images/accomidation.jpg"  class="img-responsive" alt="tfg">
-          <p>We specialise in Code of Conduct.A code of conduct is a set of rules outlining the social norms and religious rules and responsibilities of, or proper practices for, an individual, party or organization. Related concepts include ethical, honor, moral codes and religious laws.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>  
-              </div>
-              <div class="col-md-4 wthree_service">
-                <figure class="services-icon">
-                  <i class="fa fa-comments" aria-hidden="true"></i>
-                </figure>
-                <div class="title-services">Locations </div>
-                <div class="content-services"> Create a beautiful, functional site that speaks to your clients. From scratch.  </div>
-				<a href="#" data-toggle="modal" data-target="#myModal1">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-  <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
-		<div class="modal-dialog" role="document">
-             <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ROVE</h4>
-        </div>
-        <div class="modal-body">
-		<img src="images/accomidation.jpg"  class="img-responsive" alt="tfg">
-          <p>We specialise in Code of Conduct.A code of conduct is a set of rules outlining the social norms and religious rules and responsibilities of, or proper practices for, an individual, party or organization. Related concepts include ethical, honor, moral codes and religious laws.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-              </div>
-              <div class="col-md-4 wthree_service">
-                <figure class="services-icon">
-                  <i class="fa fa fa-puzzle-piece" aria-hidden="true"></i>
-                </figure>
-                <div class="title-services">Things to do </div>
-                <div class="content-services"> Create a beautiful, functional site that speaks to your clients. From scratch. </div>
-				<a href="#" data-toggle="modal" data-target="#myModal1">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-  <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
-		<div class="modal-dialog" role="document">
-             <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ROVE</h4>
-        </div>
-        <div class="modal-body">
-		<img src="images/accomidation.jpg"  class="img-responsive" alt="tfg">
-          <p>We specialise in Code of Conduct.A code of conduct is a set of rules outlining the social norms and religious rules and responsibilities of, or proper practices for, an individual, party or organization. Related concepts include ethical, honor, moral codes and religious laws.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>  
-              </div>
-            </div>
-</div>
 
-<!--/Services-->
-
-<!--Testimonials-->
-<div class="testimonials" id="testimonials">
-<div class="container">
-<h3>What Client say</h3>
-<div class="w3l_quote">
-<i class="fa fa-quote-left" aria-hidden="true"></i>
-
-<div class="flexslider-info">
-				<section class="slider">
-					<div class="flexslider">
-						<ul class="slides">
-							<li>
-								<div class="testmonial_info"> 
-									<img src="images/portrait-2163997_640.jpg" class="img-responsive"> 
-										<div class="caption">
-											<p>Lorem Ipsum is simply dummy text of the printing and 	typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-											<h3>Lina</h3>
-										</div> 
-
-								</div> 
-							</li>
-							<li>
-								<div class="testmonial_info"> 
-									 <img src="images/man-2933801_640.jpg" class="img-responsive">  
-										<div class="caption">
-											<p>Lorem Ipsum is simply dummy text of the printing and 	typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-											<h3>Adrien</h3>
-										</div> 
-
-								</div> 
-							</li>
-							<li>
-								<div class="testmonial_info"> 
-									 <img src="images/man-2933801_640.jpg" class="img-responsive">  
-										<div class="caption">
-											<p>Lorem Ipsum is simply dummy text of the printing and 	typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-											<h3>Adrien</h3>
-										</div> 
-
-								</div> 
-							</li>
-							<div class="clearfix"> </div>
-						</ul>
-					</div><div class="clearfix"> </div>
-				</section>
-		    </div>
-</div>
- </div>
-</div>
 
 <!--Contact-->
 <div class="contactUs" id="contactus">
@@ -517,15 +301,6 @@
 		
 
 </section>
-</div>
-<!--/Contact-->
-<!---<div class="map">
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509915.939484077!2d-123.79728565006775!3d37.1843152587944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C+USA!5e0!3m2!1sen!2sin!4v1509946591019" style="border:0" allowfullscreen></iframe>
- </div>--->
-<div class="footer">
-<div class="container">
- <%--<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>--%>
- </div>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>

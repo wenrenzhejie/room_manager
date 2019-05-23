@@ -129,6 +129,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 
     public String quit(){
         ActionContext.getContext().getSession().remove("userName");
+        ActionContext.getContext().getSession().remove("uid");
         return "quit_success";
     }
 }
