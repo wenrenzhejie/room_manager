@@ -4,7 +4,15 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <package name="order" extends="common" namespace="/">
+        <interceptors>
+            <interceptor name="myinterceptor" class="com.it666.room_manager.interceptor.MyInterceptor"></interceptor>
+            <interceptor-stack name="mystack">
+                <interceptor-ref name="myinterceptor"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
         <action name="order_*" class="com.it666.room_manager.order.action.OrderAction" method="{1}">
+            <interceptor-ref name="mystack"></interceptor-ref>
             <result name="preOrder">/order.jsp</result>
             <result name="addOrder" type="redirect">order_findByUserId</result>
             <result name="findByUserId">/orderList.jsp</result>
@@ -12,6 +20,8 @@
             <result name="payAll" type="redirect">order_findByUserId</result>
             <result name="payByIdPre">/pay.jsp</result>
             <result name="payById" type="redirect">order_findByUserId</result>
+            <result name="unQuality" type="redirect">order_preOrder?room.rid=${room.rid}</result>
+            <result name="toLogin">/login.jsp</result>
         </action>
     </package>
 </struts>

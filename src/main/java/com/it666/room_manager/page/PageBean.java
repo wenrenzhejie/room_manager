@@ -75,16 +75,16 @@ public class PageBean<T>{
         this.totalPages = (this.totalRecord+pageSize-1)/this.pageSize;
 
         this.begin =1;
-        this.end = 6;
+        this.end = 5;
         if(this.end > totalPages){
             this.end = totalPages;
         }else{
             this.begin = this.currentPageNum -2;
-            this.end = this.currentPageNum + 3;
+            this.end = this.currentPageNum + 2;
 
             if(this.begin < 1){
                 this.begin = 1;
-                this.end = 6;
+                this.end = 5;
             }
 
             if(this.end > this.totalPages){

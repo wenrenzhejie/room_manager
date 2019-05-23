@@ -37,6 +37,9 @@ public class Admin_UserAction extends ActionSupport implements ModelDriven<User>
         List<User> userList = pageBean.getData();
         ActionContext.getContext().getValueStack().set("userList",userList);
         ActionContext.getContext().getValueStack().push(pageBean);
+        System.out.println(pageBean.getTotalPages());
+        System.out.println(pageBean.getBegin());
+        System.out.println(pageBean.getEnd());
         return "findAllUsers";
     }
 }

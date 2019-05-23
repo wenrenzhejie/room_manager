@@ -18,7 +18,6 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
     private OrderService orderService;
     private RoomService roomService;
     private UserService userService;
-
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
@@ -42,7 +41,32 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
         return "preOrder";
     }
 
+    public void validateAddOrder() {
+        System.out.println("validateaddOrder");
+        System.out.println(order.getUser().getIdCard());
+
+        if(order.getUser().getIdCard().length() != 18){
+            this.addActionMessage("身份证号码错误");
+        }
+        String telephone = order.getUser().getTelephone();
+        System.out.println(telephone);
+        if(telephone.length() != 11){
+            this.addActionMessage("手机号码错误");
+        }
+        char[] chars = telephone.toCharArray();
+        for(int i =0;i < chars.length;i++){
+            if(chars[i] < '0' || chars[i] > '9'){
+                this.addActionMessage("手机号码错误");
+                break;
+            }
+        }
+    }
+
     public String addOrder(){
+        System.out.println(this.getActionMessages().size());
+        if(this.getActionMessages().size() > 0){
+            return "unQuality";
+        }
         order.setOid(UUID.randomUUID().toString());
         String uid = (String) ActionContext.getContext().getSession().get("uid");
         User u = userService.findById(uid);

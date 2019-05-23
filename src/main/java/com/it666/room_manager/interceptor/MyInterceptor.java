@@ -11,6 +11,6 @@ public class MyInterceptor extends MethodFilterInterceptor {
         if(userName != null){
             return invocation.invoke();
         }
-        return null;
+        return "toLogin";
     }
 }

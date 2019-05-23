@@ -269,7 +269,7 @@
         <ul class="am-pagination am-fr">
             <s:if test="%{currentPageNum != totalPages}">
                 <li>
-                    <s:a namespace="/" action="adminOrder_findAllOrders">
+                    <s:a namespace="/" action="adminUser_findAllUsers">
                         »
                         <s:param name="currentPage" value="%{currentPageNum+1}"></s:param>
                     </s:a>
@@ -277,7 +277,7 @@
             </s:if>
             <s:iterator begin="begin" end="end" var="num">
                 <li class="am-active">
-                    <s:a namespace="/" action="adminOrder_findAllOrders" style="cursor: pointer">
+                    <s:a namespace="/" action="adminUser_findAllUsers" style="cursor: pointer">
                         <s:property value="#num"></s:property>
                         <s:param name="currentPage" value="%{#num}"></s:param>
                     </s:a>
@@ -285,23 +285,15 @@
             </s:iterator>
                 <s:if test="%{currentPageNum != 1}">
                     <li>
-                        <s:a namespace="/" action="adminOrder_findAllOrders">
+                        <s:a namespace="/" action="adminUser_findAllUsers">
                             «
                             <s:param name="currentPage" value="%{currentPageNum-1}"></s:param>
                         </s:a>
                     </li>
                 </s:if>
         </ul>
-          
-          
-          
-      
           <hr />
         </form>
- 
- 
-
-
 
 </div>
 
