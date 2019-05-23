@@ -98,20 +98,12 @@
       </ul>
       <h3 class="am-icon-cart-plus"><em></em> <a href="#"> 订单管理</a></h3>
       <ul>
-        <li>订单列表</li>
-        <li>合并订单</li>
+        <li><a href="${pageContext.servletContext.contextPath}/adminOrder_findAllOrders">所有订单</a></li>
         <li>订单打印</li>
-        <li>添加订单</li>
-        <li>发货单列表</li>
-        <li>换货单列表</li>
       </ul>
-      <h3 class="am-icon-users"><em></em> <a href="#">会员管理</a></h3>
+      <h3 class="am-icon-users"><em></em> <a href="#">用户管理</a></h3>
       <ul>
-        <li>会员列表 </li>
-        <li>未激活会员</li>
-        <li>团队系谱图</li>
-        <li>会员推荐图</li>
-        <li>推荐列表</li>
+        <li><a href="${pageContext.servletContext.contextPath}/adminUser_findAllUsers">所有用户</a></li>
       </ul>
       <h3 class="am-icon-volume-up"><em></em> <a href="#">信息通知</a></h3>
       <ul>

@@ -1,6 +1,7 @@
 package com.it666.room_manager.order.dao;
 
 import com.it666.room_manager.order.domain.Order;
+import com.it666.room_manager.page.PageBean;
 import com.it666.room_manager.rooms.domain.Room;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
@@ -54,6 +55,23 @@ public class OrderDaoImpl extends HibernateDaoSupport implements OrderDao{
         Order order = list.get(0);
         order.setStatus(true);
         this.getHibernateTemplate().update(order);
+    }
+
+    @Override
+    public List<Order> findAllOrders() {
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Order.class);
+        List<Order> orderList = (List<Order>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+        return orderList;
+    }
+
+    @Override
+    public PageBean<Order> getPageBean(int pageSize, int currentPage) {
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Order.class);
+        List<Order> orderList = (List<Order>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+        List<Order> orderList1= (List<Order>) this.getHibernateTemplate().findByCriteria(detachedCriteria, (currentPage - 1) * pageSize, pageSize);
+        PageBean pageBean = new PageBean(pageSize, currentPage, orderList.size());
+        pageBean.setData(orderList1);
+        return pageBean;
     }
 
 }

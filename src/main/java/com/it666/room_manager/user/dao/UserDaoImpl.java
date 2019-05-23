@@ -1,5 +1,6 @@
 package com.it666.room_manager.user.dao;
 
+import com.it666.room_manager.page.PageBean;
 import com.it666.room_manager.user.domain.User;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
@@ -60,4 +61,15 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     public User findById(String uid) {
         return this.getHibernateTemplate().get(User.class,uid);
     }
+
+    @Override
+    public PageBean<User> getPageBean(int pageSize, int currentPage) {
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(User.class);
+        List<User> userList = (List<User>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+        List<User> userList1= (List<User>) this.getHibernateTemplate().findByCriteria(detachedCriteria, (currentPage - 1) * pageSize, pageSize);
+        PageBean pageBean = new PageBean(pageSize, currentPage, userList.size());
+        pageBean.setData(userList1);
+        return pageBean;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.it666.room_manager.order.service;
 
 import com.it666.room_manager.order.dao.OrderDao;
 import com.it666.room_manager.order.domain.Order;
+import com.it666.room_manager.page.PageBean;
 import com.it666.room_manager.rooms.domain.Room;
 
 import java.util.Date;
@@ -57,5 +58,15 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void payById(String oid) {
         orderDao.payById(oid);
+    }
+
+    @Override
+    public List<Order> findAllOrders() {
+        return orderDao.findAllOrders();
+    }
+
+    @Override
+    public PageBean<Order> getPageBean(int pageSize, int currentPage) {
+        return orderDao.getPageBean(pageSize,currentPage);
     }
 }

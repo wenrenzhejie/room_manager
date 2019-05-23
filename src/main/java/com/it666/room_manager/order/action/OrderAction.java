@@ -45,18 +45,18 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
     public String addOrder(){
         order.setOid(UUID.randomUUID().toString());
         String uid = (String) ActionContext.getContext().getSession().get("uid");
-
         User u = userService.findById(uid);
         u.setIdCard(order.getUser().getIdCard());
         u.setTelephone(order.getUser().getTelephone());
         u.setReal_name(order.getUser().getReal_name());
-
         Room r = roomService.findById(order.getRoom());
-        order.setUser(u);
-        order.setRoom(r);
         long l = order.getEndDate().getTime() - order.getBeginDate().getTime();
         int d = (int) (l/(24*60*60*1000));
         order.setSubtotal(r.getPrice()*d);
+        int addScore = (int) (order.getSubtotal()*0.1);
+        u.setScore(u.getScore()+addScore);
+        order.setUser(u);
+        order.setRoom(r);
         order.setSuccessTime(new Date());
         orderService.addOrder(order);
         Room byId = roomService.findById(r);
@@ -73,19 +73,21 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
     }
 
     public String cancle(){
+        String uid = (String) ActionContext.getContext().getSession().get("uid");
+        User u = userService.findById(uid);
+        int score = (int) (order.getSubtotal()*0.1);
+        u.setScore(u.getScore() - score);
+        userService.updateUser(u);
         orderService.deleteById(order);
         return "cancle";
     }
     public String payAll(){
         String uid = (String) ActionContext.getContext().getSession().get("uid");
-        System.out.println(uid);
         orderService.payAll(uid);
         return "payAll";
     }
 
     public String payById(){
-        System.out.println("aaaaaaaaaaaaaa");
-        System.out.println(order.getOid());
         orderService.payById(order.getOid());
         return "payById";
     }

@@ -21,5 +21,13 @@
             <result name="editRoom" type="redirect">adminRoom_findAllRooms</result>
             <result name="deleteRoom" type="redirect">adminRoom_findAllRooms</result>
         </action>
+
+        <action name="adminOrder_*" class="com.it666.room_manager.admin.action.Admin_OrderAction" method="{1}">
+            <result name="findAllOrders">/admin/orderList.jsp</result>
+        </action>
+
+        <action name="adminUser_*" class="com.it666.room_manager.admin.action.Admin_UserAction" method="{1}">
+            <result name="findAllUsers">/admin/userList.jsp</result>
+        </action>
     </package>
 </struts>

@@ -1,6 +1,7 @@
 package com.it666.room_manager.order.dao;
 
 import com.it666.room_manager.order.domain.Order;
+import com.it666.room_manager.page.PageBean;
 import com.it666.room_manager.rooms.domain.Room;
 import org.aspectj.weaver.ast.Or;
 
@@ -15,4 +16,8 @@ public interface OrderDao {
     public void payAll(String uid);
 
     public void payById(String oid);
+
+    public List<Order> findAllOrders();
+
+    public PageBean<Order> getPageBean(int pageSize, int currentPage);
 }

@@ -1,6 +1,7 @@
 package com.it666.room_manager.order.service;
 
 import com.it666.room_manager.order.domain.Order;
+import com.it666.room_manager.page.PageBean;
 import com.it666.room_manager.rooms.domain.Room;
 
 import java.util.Date;
@@ -13,4 +14,8 @@ public interface OrderService {
     public void deleteById(Order order);
     public void payAll(String uid);
     public void payById(String oid);
+
+    public List<Order> findAllOrders();
+
+    public PageBean<Order> getPageBean(int pageSize, int currentPage);
 }

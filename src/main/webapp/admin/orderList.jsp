@@ -98,10 +98,10 @@
             <li><a href="${pageContext.servletContext.contextPath}/adminRoom_findAllRooms">房间列表</a></li>
         </ul>
       <h3 class="am-icon-cart-plus"><em></em> <a href="#"> 订单管理</a></h3>
-        <ul>
-            <li><a href="${pageContext.servletContext.contextPath}/adminOrder_findAllOrders">所有订单</a></li>
-            <li>订单打印</li>
-        </ul>
+      <ul>
+          <li><a href="${pageContext.servletContext.contextPath}/adminOrder_findAllOrders">所有订单</a></li>
+        <li>订单打印</li>
+      </ul>
         <h3 class="am-icon-users"><em></em> <a href="#">用户管理</a></h3>
         <ul>
             <li><a href="${pageContext.servletContext.contextPath}/adminUser_findAllUsers">所有用户</a></li>
@@ -186,10 +186,10 @@
     <div class="listbiaoti am-cf">
       <ul class="am-icon-flag on"> 栏目名称</ul>
       
-      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">房间列表</a></dl>
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">订单</a></dl>
       
       <dl>
-        <s:a cssClass="am-btn am-btn-danger am-round am-btn-xs am-icon-plus" namespace="/" action="adminRoom_beforeAddRoom"> 添加房间</s:a>
+        <s:a cssClass="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"> 订单列表</s:a>
       </dl>
     </div>
 	
@@ -238,58 +238,40 @@
           <table width="100%" class="am-table am-table-bordered am-table-radius am-table-striped" style="text-align: center;" valign="bottom">
             <thead>
               <tr class="am-success" style="text-align: center">
-                <th></th>
                 <th style="text-align: center">序号</th>
-                <th style="text-align: center">图片</th>
+                <th style="text-align: center">房客</th>
                 <th style="text-align: center">房间号</th>
-                <th style="text-align: center">价格</th>
-                <th style="text-align: center">类别</th>
-                <th style="text-align: center">描述</th>
-                <th width="163px" class="table-set" style="text-align: center">操作</th>
+                <th style="text-align: center">入住日期</th>
+                <th style="text-align: center">离去日期</th>
+                <th style="text-align: center">交易时间</th>
+                <th style="text-align: center">金额</th>
+                <th style="text-align: center">状态</th>
               </tr>
             </thead>
             <tbody>
-            <s:iterator value="roomList" status="state">
+            <s:iterator value="orderList" status="state">
               <tr>
-                  <td><input type="checkbox"></td>
                   <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="#state.count"></s:property></td>
-                <td><img src="${pageContext.servletContext.contextPath}/<s:property value='image'/>" style="width: 100px;height: 100px;"></td>
-                <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="rnum"></s:property></td>
-                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="price"></s:property></td>
-                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="category.cname"></s:property></td>
-                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="rdesc"></s:property></td>
-                <td><div class="am-btn-toolbar" style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px">
-                   <%-- <div class="am-btn-group am-btn-group-xs">--%>
-                        <s:a cssClass="am-btn am-btn-default am-btn-xs am-text-secondary am-round" namespace="/" action="adminRoom_beforeEditRoom">
-                            <s:param name="rid" value="%{rid}"></s:param>
-                            <span class="am-icon-pencil-square-o"></span>
-                        </s:a>
-                        <s:a cssClass="am-btn am-btn-default am-btn-xs am-text-danger am-round" namespace="/" action="adminRoom_deleteRoom">
-                            <s:param name="rid" value="%{rid}"></s:param>
-                            <span class="am-icon-trash-o"></span>
-                        </s:a>
-                   <%-- </div>--%>
-                  </div></td>
+                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="user.real_name"></s:property></td>
+                <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="room.rnum"></s:property></td>
+                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:date name="%{beginDate}" format="yyyy-MM-dd" var="bd"></s:date><s:property value="#bd"></s:property></td>
+                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:date name="%{endDate}" format="yyyy-MM-dd" var="ed"></s:date><s:property value="#ed"></s:property></td>
+                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:date name="%{successTime}" format="yyyy-MM-dd" var="sd"></s:date><s:property value="#sd"></s:property></td>
+                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px"><s:property value="subtotal"></s:property></td>
+                  <td style="vertical-align: center!important;width: 100px;height: 100px;line-height: 100px">
+                      <s:if test="%{status}">已付款</s:if>
+                      <s:else>未付款</s:else>
+                  </td>
               </tr>
             </s:iterator>
             </tbody>
           </table>
           
-                 <div class="am-btn-group am-btn-group-xs">
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 删除</button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 上架</button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 下架</button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 移动</button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-archive"></span> 移动</button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
-            </div>
 
         <ul class="am-pagination am-fr">
             <s:if test="%{currentPageNum != totalPages}">
                 <li>
-                    <s:a namespace="/" action="adminRoom_findAllRooms">
+                    <s:a namespace="/" action="adminOrder_findAllOrders">
                         »
                         <s:param name="currentPage" value="%{currentPageNum+1}"></s:param>
                     </s:a>
@@ -297,20 +279,20 @@
             </s:if>
             <s:iterator begin="begin" end="end" var="num">
                 <li class="am-active">
-                    <s:a namespace="/" action="adminRoom_findAllRooms" style="cursor: pointer">
+                    <s:a namespace="/" action="adminOrder_findAllOrders" style="cursor: pointer">
                         <s:property value="#num"></s:property>
                         <s:param name="currentPage" value="%{#num}"></s:param>
                     </s:a>
                 </li>
             </s:iterator>
-            <s:if test="%{currentPageNum != 1}">
-                <li>
-                    <s:a namespace="/" action="adminRoom_findAllRooms" style="cursor: pointer">
-                        «
-                        <s:param name="currentPage" value="%{currentPageNum-1}"></s:param>
-                    </s:a>
-                </li>
-            </s:if>
+                <s:if test="%{currentPageNum != 1}">
+                    <li>
+                        <s:a namespace="/" action="adminOrder_findAllOrders">
+                            «
+                            <s:param name="currentPage" value="%{currentPageNum-1}"></s:param>
+                        </s:a>
+                    </li>
+                </s:if>
         </ul>
           
           

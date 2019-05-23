@@ -1,5 +1,6 @@
 package com.it666.room_manager.user.service;
 
+import com.it666.room_manager.page.PageBean;
 import com.it666.room_manager.user.dao.UserDao;
 import com.it666.room_manager.user.domain.User;
 import com.it666.room_manager.user.exception.UserException;
@@ -62,5 +63,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public User findById(String uid) {
         return userDao.findById(uid);
+    }
+
+    @Override
+    public PageBean<User> getPageBean(int pageSize, int currentPage) {
+        return userDao.getPageBean(pageSize,currentPage);
     }
 }

@@ -1,5 +1,6 @@
 package com.it666.room_manager.user.dao;
 
+import com.it666.room_manager.page.PageBean;
 import com.it666.room_manager.user.domain.User;
 
 public interface UserDao {
@@ -10,4 +11,5 @@ public interface UserDao {
     public void active(User u1);
     public void updateUser(User u);
     public User findById(String uid);
+    public PageBean<User> getPageBean(int pageSize, int currentPage);
 }

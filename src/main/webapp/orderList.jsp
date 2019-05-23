@@ -69,6 +69,7 @@
                 </td>
                 <td><s:a namespace="/" action="order_cancle">
                     <s:param name="oid" value="%{oid}"></s:param>
+                    <s:param name="subtotal" value="%{subtotal}"></s:param>
                     取消订单
                 </s:a></td>
             </tr>

@@ -36,9 +36,8 @@ public class Admin_CategoryAction implements ModelDriven<Category> {
     public String findAllCategory(){
         PageBean<Category> pageBean = categoryService.getPageBean(pageSize,currentPage);
         List<Category> categoryList = pageBean.getData();
-        System.out.println(categoryList.size());
-        System.out.println(pageBean.getTotalPages());
         ActionContext.getContext().getValueStack().set("categoryList",categoryList);
+        System.out.println(pageBean.getCurrentPageNum());
         ActionContext.getContext().getValueStack().push(pageBean);
         return "findAllCategory";
     }
