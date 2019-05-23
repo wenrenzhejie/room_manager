@@ -1,4 +1,5 @@
-<!doctype html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html class="no-js">
 <head>
 <meta charset="utf-8">
@@ -9,13 +10,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="renderer" content="webkit">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link rel="icon" type="image/png" href="assets/i/favicon.png">
-<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+<link rel="icon" type="image/png" href="${pageContext.servletContext.contextPath}/admin/assets/i/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.servletContext.contextPath}/admin/assets/i/app-icon72x72@2x.png">
 <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-<link rel="stylesheet" href="assets/css/amazeui.min.css"/>
-<link rel="stylesheet" href="assets/css/admin.css">
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/app.js"></script>
+<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/admin/assets/css/amazeui.min.css"/>
+<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/admin/assets/css/admin.css">
+<script src="${pageContext.servletContext.contextPath}/admin/assets/js/jquery.min.js"></script>
+<script src="${pageContext.servletContext.contextPath}/admin/assets/js/app.js"></script>
 </head>
 <body>
 <header class="am-topbar admin-header">
@@ -32,10 +33,10 @@
   	
     <li class="am-dropdown-header">所有消息都在这里</li>
 
-    
+
 
     <li><a href="#">未激活会员 <span class="am-badge am-badge-danger am-round">556</span></a></li>
-    <li><a href="#">未激活代理 <span class="am-badge am-badge-danger am-round">69</span></a></a></li>
+    <li><a href="#">未激活代理 <span class="am-badge am-badge-danger am-round">69</span></a></li>
     <li><a href="#">未处理汇款</a></li>
     <li><a href="#">未发放提现</a></li>
     <li><a href="#">未发货订单</a></li>
@@ -70,7 +71,7 @@
 
 </p>
 
-<p class="ycfg"><input type="text" class="am-form-field am-input-sm" placeholder="圆角表单域" /></p>
+<p class="ycfg"><input type="text" class="am-form-field am-input-sm" placeholder="搜索" /></p>
 <p><button class="am-btn am-btn-xs am-btn-default am-xiao"><i class="am-icon-search"></i></button></p>
  </li>
 
@@ -87,16 +88,13 @@
 <div class="nav-navicon admin-main admin-sidebar">
     
     
-    <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
+    <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：admin</div>
     <div class="sideMenu">
-      <h3 class="am-icon-flag"><em></em> <a href="#">商品管理</a></h3>
+      <h3 class="am-icon-flag"><em></em> <a href="#">房间管理</a></h3>
       <ul>
-        <li><a href="">商品列表</a></li>
-        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'>添加新商品</li>
-        <li>商品分类</li>
-        <li>用户评论</li>
-        <li>商品回收站</li>
-        <li>库存管理 </li>
+        <li><a href="${pageContext.servletContext.contextPath}/admin/index.jsp">首页</a></li>
+        <li><a href="${pageContext.servletContext.contextPath}/admin_findAllCategory">房间类别</a></li>
+        <li><a href="${pageContext.servletContext.contextPath}/adminRoom_findAllRooms">房间列表</a></li>
       </ul>
       <h3 class="am-icon-cart-plus"><em></em> <a href="#"> 订单管理</a></h3>
       <ul>
@@ -150,61 +148,35 @@
 				});
 		</script> 
 
-    
-    
-    
-    
-    
-    
-    
 </div>
 
 <div class=" admin-content">
-	
 		<div class="daohang">
 			<ul>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs"> 首页 </li>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">帮助中心<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">奖金管理<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">产品管理<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
-				
-				
+              <li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs"> 首页 </button></li>
 			</ul>
-
-       
-
-	
 </div>
-	
-	
-
-
 <div class="admin">
-	
-
-	
-	
-   
    <div class="admin-index">
       <dl data-am-scrollspy="{animation: 'slide-right', delay: 100}">
         <dt class="qs"><i class="am-icon-users"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">团队数量</dd>
+        <dd>5千</dd>
+        <dd class="f12">员工</dd>
       </dl>
       <dl data-am-scrollspy="{animation: 'slide-right', delay: 300}">
         <dt class="cs"><i class="am-icon-area-chart"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">今日收入</dd>
+        <dd>1万</dd>
+        <dd class="f12">日收入</dd>
       </dl>
       <dl data-am-scrollspy="{animation: 'slide-right', delay: 600}">
         <dt class="hs"><i class="am-icon-shopping-cart"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">商品数量</dd>
+        <dd>66</dd>
+        <dd class="f12">分店</dd>
       </dl>
       <dl data-am-scrollspy="{animation: 'slide-right', delay: 900}">
         <dt class="ls"><i class="am-icon-cny"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">全部收入</dd>
+        <dd>1000万</dd>
+        <dd class="f12">净利润</dd>
       </dl>
     </div>
     <div class="admin-biaoge">
@@ -481,32 +453,6 @@
         </div>
       </div>
       <script type="text/javascript">jQuery(".slideTxtBox").slide();</script> 
-   
-   
-   
-   
-   
-   
-   
-   
-</div>
-
-    <div class="foods">
-    	<ul>版权所有@2015 .模板收集自 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> -  More Templates<a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></ul>
-    	<dl><a href="" title="返回头部" class="am-icon-btn am-icon-arrow-up"></a></dl>
-
-
-    	
-    </div>
-
-
-
-
-
-
-
-</div>
-
 </div>
 
 

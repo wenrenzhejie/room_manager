@@ -15,4 +15,5 @@
     <include file="com/it666/room_manager/configure/struts/struts-category.xml"></include>
     <include file="com/it666/room_manager/configure/struts/struts-room.xml"></include>
     <include file="com/it666/room_manager/configure/struts/struts-order.xml"></include>
+    <include file="com/it666/room_manager/configure/struts/struts-admin.xml"></include>
 </struts>

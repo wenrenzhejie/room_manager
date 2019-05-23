@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="admin" extends="common" namespace="/">
+        <action name="admin_*" class="com.it666.room_manager.admin.action.Admin_CategoryAction" method="{1}">
+            <result name="findAllCategory">/admin/categoryList.jsp</result>
+            <result name="addCategory" type="redirect">admin_findAllCategory</result>
+            <result name="deleteCategory" type="redirect">admin_findAllCategory</result>
+            <result name="editCategory">/admin/editCategory.jsp</result>
+            <result name="realEditCategory" type="redirect">admin_findAllCategory</result>
+            <result name="categoryPage">/admin/categoryList.jsp</result>
+        </action>
+
+        <action name="adminRoom_*" class="com.it666.room_manager.admin.action.Admin_RoomAction" method="{1}">
+            <result name="findAllRooms">/admin/rooms.jsp</result>
+            <result name="beforeAddRoom">/admin/addRoom.jsp</result>
+            <result name="addRoom" type="redirect">adminRoom_findAllRooms</result>
+            <result name="beforeEditRoom">/admin/editRoom.jsp</result>
+            <result name="editRoom" type="redirect">adminRoom_findAllRooms</result>
+            <result name="deleteRoom" type="redirect">adminRoom_findAllRooms</result>
+        </action>
+    </package>
+</struts>
